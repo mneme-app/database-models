@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/mneme-app/database-models/issues"
   },
-  "homepage": "https://github.com/mneme-app/database-models#readme"
+  "homepage": "https://github.com/mneme-app/database-models#readme",
+  "dependencies": {
+    "mongoose": "^7.4.5"
+  }
 }
