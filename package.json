@@ -1,0 +1,19 @@
+{
+  "name": "database-models",
+  "version": "1.0.0",
+  "description": "The database models for use by the Mneme app and its microservices",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mneme-app/database-models.git"
+  },
+  "author": "joewrotehaikus",
+  "license": "GPL-3.0-or-later",
+  "bugs": {
+    "url": "https://github.com/mneme-app/database-models/issues"
+  },
+  "homepage": "https://github.com/mneme-app/database-models#readme"
+}
