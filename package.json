@@ -1,5 +1,5 @@
 {
-  "name": "database-models",
+  "name": "@mneme-app/database-models",
   "version": "1.0.0",
   "description": "The database models for use by the Mneme app and its microservices",
   "main": "index.js",
