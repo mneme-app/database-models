@@ -1,7 +1,11 @@
 {
-  "name": "@mneme-app/database-models",
+  "name": "@mneme_app/database-models",
   "version": "1.0.0",
+  "private": false,
   "description": "The database models for use by the Mneme app and its microservices",
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
+  },
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
