@@ -1,4 +1,5 @@
 import { model, models, Schema } from "mongoose";
+import NotificationSchema from "./NotificationSchema";
 
 // This is for tracking progress on quiz questions
 // and spaced repetition (Leitner method)
@@ -62,6 +63,7 @@ const UserSchema = new Schema(
         lastLogin: {
             type: Date,
         },
+        notifications: [NotificationSchema],
         isPublic: {
             type: Boolean,
             default: false,
