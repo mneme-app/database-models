@@ -21,8 +21,146 @@
 /// <reference types="mongoose/types/utility.js" />
 /// <reference types="mongoose/types/validation.js" />
 /// <reference types="mongoose/types/virtuals.js" />
-/// <reference types="mongoose" />
 /// <reference types="mongoose/types/inferschematype.js" />
-declare const _default: import("mongoose").Model<any, {}, {}, {}, any, any>;
+declare const _default: import("mongoose").Model<{
+    createdAt: NativeDate;
+    updatedAt: NativeDate;
+} & {
+    type: "prompt-response" | "multiple-choice" | "fill-in-the-blank" | "ordered-list-answer" | "unordered-list-answer" | "verbatim";
+    sources: import("mongoose").Types.ObjectId[];
+    contributors: import("mongoose").Types.ObjectId[];
+    createdBy: import("mongoose").Types.ObjectId;
+    prompt: string;
+    choices: string[];
+    correctResponses: string[];
+    hints: string[];
+    notes: import("mongoose").Types.ObjectId[];
+    permissions?: {
+        allRead: boolean;
+        allWrite: boolean;
+        usersRead: import("mongoose").Types.ObjectId[];
+        usersWrite: import("mongoose").Types.ObjectId[];
+        groupsRead: import("mongoose").Types.ObjectId[];
+        groupsWrite: import("mongoose").Types.ObjectId[];
+    } | undefined;
+    updatedBy?: import("mongoose").Types.ObjectId | undefined;
+}, {}, {}, {}, import("mongoose").Document<unknown, {}, {
+    createdAt: NativeDate;
+    updatedAt: NativeDate;
+} & {
+    type: "prompt-response" | "multiple-choice" | "fill-in-the-blank" | "ordered-list-answer" | "unordered-list-answer" | "verbatim";
+    sources: import("mongoose").Types.ObjectId[];
+    contributors: import("mongoose").Types.ObjectId[];
+    createdBy: import("mongoose").Types.ObjectId;
+    prompt: string;
+    choices: string[];
+    correctResponses: string[];
+    hints: string[];
+    notes: import("mongoose").Types.ObjectId[];
+    permissions?: {
+        allRead: boolean;
+        allWrite: boolean;
+        usersRead: import("mongoose").Types.ObjectId[];
+        usersWrite: import("mongoose").Types.ObjectId[];
+        groupsRead: import("mongoose").Types.ObjectId[];
+        groupsWrite: import("mongoose").Types.ObjectId[];
+    } | undefined;
+    updatedBy?: import("mongoose").Types.ObjectId | undefined;
+}> & {
+    createdAt: NativeDate;
+    updatedAt: NativeDate;
+} & {
+    type: "prompt-response" | "multiple-choice" | "fill-in-the-blank" | "ordered-list-answer" | "unordered-list-answer" | "verbatim";
+    sources: import("mongoose").Types.ObjectId[];
+    contributors: import("mongoose").Types.ObjectId[];
+    createdBy: import("mongoose").Types.ObjectId;
+    prompt: string;
+    choices: string[];
+    correctResponses: string[];
+    hints: string[];
+    notes: import("mongoose").Types.ObjectId[];
+    permissions?: {
+        allRead: boolean;
+        allWrite: boolean;
+        usersRead: import("mongoose").Types.ObjectId[];
+        usersWrite: import("mongoose").Types.ObjectId[];
+        groupsRead: import("mongoose").Types.ObjectId[];
+        groupsWrite: import("mongoose").Types.ObjectId[];
+    } | undefined;
+    updatedBy?: import("mongoose").Types.ObjectId | undefined;
+} & {
+    _id: import("mongoose").Types.ObjectId;
+}, Schema<any, import("mongoose").Model<any, any, any, any, any, any>, {}, {}, {}, {}, {
+    timestamps: true;
+}, {
+    createdAt: NativeDate;
+    updatedAt: NativeDate;
+} & {
+    type: "prompt-response" | "multiple-choice" | "fill-in-the-blank" | "ordered-list-answer" | "unordered-list-answer" | "verbatim";
+    sources: import("mongoose").Types.ObjectId[];
+    contributors: import("mongoose").Types.ObjectId[];
+    createdBy: import("mongoose").Types.ObjectId;
+    prompt: string;
+    choices: string[];
+    correctResponses: string[];
+    hints: string[];
+    notes: import("mongoose").Types.ObjectId[];
+    permissions?: {
+        allRead: boolean;
+        allWrite: boolean;
+        usersRead: import("mongoose").Types.ObjectId[];
+        usersWrite: import("mongoose").Types.ObjectId[];
+        groupsRead: import("mongoose").Types.ObjectId[];
+        groupsWrite: import("mongoose").Types.ObjectId[];
+    } | undefined;
+    updatedBy?: import("mongoose").Types.ObjectId | undefined;
+}, import("mongoose").Document<unknown, {}, {
+    createdAt: NativeDate;
+    updatedAt: NativeDate;
+} & {
+    type: "prompt-response" | "multiple-choice" | "fill-in-the-blank" | "ordered-list-answer" | "unordered-list-answer" | "verbatim";
+    sources: import("mongoose").Types.ObjectId[];
+    contributors: import("mongoose").Types.ObjectId[];
+    createdBy: import("mongoose").Types.ObjectId;
+    prompt: string;
+    choices: string[];
+    correctResponses: string[];
+    hints: string[];
+    notes: import("mongoose").Types.ObjectId[];
+    permissions?: {
+        allRead: boolean;
+        allWrite: boolean;
+        usersRead: import("mongoose").Types.ObjectId[];
+        usersWrite: import("mongoose").Types.ObjectId[];
+        groupsRead: import("mongoose").Types.ObjectId[];
+        groupsWrite: import("mongoose").Types.ObjectId[];
+    } | undefined;
+    updatedBy?: import("mongoose").Types.ObjectId | undefined;
+}> & {
+    createdAt: NativeDate;
+    updatedAt: NativeDate;
+} & {
+    type: "prompt-response" | "multiple-choice" | "fill-in-the-blank" | "ordered-list-answer" | "unordered-list-answer" | "verbatim";
+    sources: import("mongoose").Types.ObjectId[];
+    contributors: import("mongoose").Types.ObjectId[];
+    createdBy: import("mongoose").Types.ObjectId;
+    prompt: string;
+    choices: string[];
+    correctResponses: string[];
+    hints: string[];
+    notes: import("mongoose").Types.ObjectId[];
+    permissions?: {
+        allRead: boolean;
+        allWrite: boolean;
+        usersRead: import("mongoose").Types.ObjectId[];
+        usersWrite: import("mongoose").Types.ObjectId[];
+        groupsRead: import("mongoose").Types.ObjectId[];
+        groupsWrite: import("mongoose").Types.ObjectId[];
+    } | undefined;
+    updatedBy?: import("mongoose").Types.ObjectId | undefined;
+} & {
+    _id: import("mongoose").Types.ObjectId;
+}>>;
 export default _default;
+import { Schema } from "mongoose";
 //# sourceMappingURL=Quiz.d.ts.map

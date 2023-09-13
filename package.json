@@ -1,13 +1,16 @@
 {
   "name": "@mneme_app/database-models",
   "type": "module",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "private": false,
   "description": "The database models for use by the Mneme app and its microservices",
   "publishConfig": {
     "registry": "https://registry.npmjs.org/"
   },
   "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/mneme-app/database-models.git"

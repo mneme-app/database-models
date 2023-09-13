@@ -23,29 +23,43 @@
 /// <reference types="mongoose/types/virtuals.js" />
 /// <reference types="mongoose/types/inferschematype.js" />
 export default NotificationSchema;
-declare const NotificationSchema: Schema<any, import("mongoose").Model<any, any, any, any, any, any>, {}, {}, {}, {}, import("mongoose").DefaultSchemaOptions, {
+declare const NotificationSchema: Schema<any, import("mongoose").Model<any, any, any, any, any, any>, {}, {}, {}, {}, {
+    timestamps: true;
+}, {
+    createdAt: NativeDate;
+    updatedAt: NativeDate;
+} & {
     from: {
-        required?: unknown;
+        user?: import("mongoose").Types.ObjectId | undefined;
         group?: import("mongoose").Types.ObjectId | undefined;
         admin?: import("mongoose").Types.ObjectId | undefined;
     };
-    subject: "Response required: Notice of violation" | "A group has invited you to join them!";
+    subject: string;
+    responseSent: boolean;
     message?: string | undefined;
 }, import("mongoose").Document<unknown, {}, {
+    createdAt: NativeDate;
+    updatedAt: NativeDate;
+} & {
     from: {
-        required?: unknown;
+        user?: import("mongoose").Types.ObjectId | undefined;
         group?: import("mongoose").Types.ObjectId | undefined;
         admin?: import("mongoose").Types.ObjectId | undefined;
     };
-    subject: "Response required: Notice of violation" | "A group has invited you to join them!";
+    subject: string;
+    responseSent: boolean;
     message?: string | undefined;
 }> & {
+    createdAt: NativeDate;
+    updatedAt: NativeDate;
+} & {
     from: {
-        required?: unknown;
+        user?: import("mongoose").Types.ObjectId | undefined;
         group?: import("mongoose").Types.ObjectId | undefined;
         admin?: import("mongoose").Types.ObjectId | undefined;
     };
-    subject: "Response required: Notice of violation" | "A group has invited you to join them!";
+    subject: string;
+    responseSent: boolean;
     message?: string | undefined;
 } & {
     _id: import("mongoose").Types.ObjectId;

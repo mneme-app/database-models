@@ -1,10 +1,5 @@
-"use strict";
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
-Object.defineProperty(exports, "__esModule", { value: true });
-const PermissionSchema_js_1 = __importDefault(require("./PermissionSchema.js"));
-const { model, models, Schema } = require("mongoose");
+import PermissionSchema from "./PermissionSchema.js";
+import { model, Schema } from "mongoose";
 //  validation:
 //  need either lastAccessed or publishDate
 //  url to match http format
@@ -51,11 +46,11 @@ const SourceSchema = new Schema({
     lastAccessed: {
         type: Date,
     },
-    permissions: PermissionSchema_js_1.default,
+    permissions: PermissionSchema,
 }, {
     timestamps: true,
 });
 SourceSchema.set("toJSON", {
     virtuals: true,
 });
-exports.default = (models === null || models === void 0 ? void 0 : models.source) || model("source", SourceSchema);
+export default model("source", SourceSchema);

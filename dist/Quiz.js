@@ -1,10 +1,5 @@
-"use strict";
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
-Object.defineProperty(exports, "__esModule", { value: true });
-const { model, models, Schema } = require("mongoose");
-const PermissionSchema_js_1 = __importDefault(require("./PermissionSchema.js"));
+import { model, Schema } from "mongoose";
+import PermissionSchema from "./PermissionSchema.js";
 const QuizSchema = new Schema({
     type: {
         type: String,
@@ -77,11 +72,11 @@ const QuizSchema = new Schema({
         type: Schema.Types.ObjectId,
         ref: "user",
     },
-    permissions: PermissionSchema_js_1.default,
+    permissions: PermissionSchema,
 }, {
     timestamps: true,
 });
 QuizSchema.set("toJSON", {
     virtuals: true,
 });
-exports.default = (models === null || models === void 0 ? void 0 : models.quiz) || model("quiz", QuizSchema);
+export default model("quiz", QuizSchema);

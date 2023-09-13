@@ -1,4 +1,3 @@
-// import { model, models, Schema } from "mongoose";
 import { model, Schema } from "mongoose";
 
 const GroupSchema = new Schema(
@@ -31,6 +30,12 @@ const GroupSchema = new Schema(
                 ref: "user",
             },
         ],
+        invitations: [
+            {
+                type: Schema.Types.ObjectId,
+                ref: "user",
+            },
+        ],
         isPublic: {
             type: Boolean,
             default: false,
@@ -41,5 +46,4 @@ const GroupSchema = new Schema(
     },
 );
 
-// export default models?.group || model("group", GroupSchema);
 export default model("group", GroupSchema);

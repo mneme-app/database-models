@@ -1,6 +1,4 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-const { model, models, Schema } = require("mongoose");
+import { model, Schema } from "mongoose";
 const GroupSchema = new Schema({
     name: {
         type: String,
@@ -30,6 +28,12 @@ const GroupSchema = new Schema({
             ref: "user",
         },
     ],
+    invitations: [
+        {
+            type: Schema.Types.ObjectId,
+            ref: "user",
+        },
+    ],
     isPublic: {
         type: Boolean,
         default: false,
@@ -37,4 +41,4 @@ const GroupSchema = new Schema({
 }, {
     timestamps: true,
 });
-exports.default = (models === null || models === void 0 ? void 0 : models.group) || model("group", GroupSchema);
+export default model("group", GroupSchema);

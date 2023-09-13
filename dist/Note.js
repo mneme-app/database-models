@@ -1,10 +1,5 @@
-"use strict";
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
-Object.defineProperty(exports, "__esModule", { value: true });
-const { model, models, Schema } = require("mongoose");
-const PermissionSchema_js_1 = __importDefault(require("./PermissionSchema.js"));
+import { model, Schema } from "mongoose";
+import PermissionSchema from "./PermissionSchema.js";
 // Should add option to link to videos/images instead of text
 // Captions will be required in those cases
 // Don't forget to validate at least one source ID
@@ -32,11 +27,11 @@ const NoteSchema = new Schema({
         ref: "user",
         required: true,
     },
-    permissions: PermissionSchema_js_1.default,
+    permissions: PermissionSchema,
 }, {
     timestamps: true,
 });
 NoteSchema.set("toJSON", {
     virtuals: true,
 });
-exports.default = (models === null || models === void 0 ? void 0 : models.note) || model("note", NoteSchema);
+export default model("note", NoteSchema);

@@ -21,8 +21,134 @@
 /// <reference types="mongoose/types/utility.js" />
 /// <reference types="mongoose/types/validation.js" />
 /// <reference types="mongoose/types/virtuals.js" />
-/// <reference types="mongoose" />
 /// <reference types="mongoose/types/inferschematype.js" />
-declare const _default: import("mongoose").Model<any, {}, {}, {}, any, any>;
+declare const _default: import("mongoose").Model<{
+    createdAt: NativeDate;
+    updatedAt: NativeDate;
+} & {
+    createdBy: import("mongoose").Types.ObjectId;
+    title: string;
+    authors: string[];
+    tags: string[];
+    permissions?: {
+        allRead: boolean;
+        allWrite: boolean;
+        usersRead: import("mongoose").Types.ObjectId[];
+        usersWrite: import("mongoose").Types.ObjectId[];
+        groupsRead: import("mongoose").Types.ObjectId[];
+        groupsWrite: import("mongoose").Types.ObjectId[];
+    } | undefined;
+    medium?: "book" | "article" | "video" | "podcast" | "website" | undefined;
+    url?: string | undefined;
+    publishedAt?: Date | undefined;
+    lastAccessed?: Date | undefined;
+}, {}, {}, {}, import("mongoose").Document<unknown, {}, {
+    createdAt: NativeDate;
+    updatedAt: NativeDate;
+} & {
+    createdBy: import("mongoose").Types.ObjectId;
+    title: string;
+    authors: string[];
+    tags: string[];
+    permissions?: {
+        allRead: boolean;
+        allWrite: boolean;
+        usersRead: import("mongoose").Types.ObjectId[];
+        usersWrite: import("mongoose").Types.ObjectId[];
+        groupsRead: import("mongoose").Types.ObjectId[];
+        groupsWrite: import("mongoose").Types.ObjectId[];
+    } | undefined;
+    medium?: "book" | "article" | "video" | "podcast" | "website" | undefined;
+    url?: string | undefined;
+    publishedAt?: Date | undefined;
+    lastAccessed?: Date | undefined;
+}> & {
+    createdAt: NativeDate;
+    updatedAt: NativeDate;
+} & {
+    createdBy: import("mongoose").Types.ObjectId;
+    title: string;
+    authors: string[];
+    tags: string[];
+    permissions?: {
+        allRead: boolean;
+        allWrite: boolean;
+        usersRead: import("mongoose").Types.ObjectId[];
+        usersWrite: import("mongoose").Types.ObjectId[];
+        groupsRead: import("mongoose").Types.ObjectId[];
+        groupsWrite: import("mongoose").Types.ObjectId[];
+    } | undefined;
+    medium?: "book" | "article" | "video" | "podcast" | "website" | undefined;
+    url?: string | undefined;
+    publishedAt?: Date | undefined;
+    lastAccessed?: Date | undefined;
+} & {
+    _id: import("mongoose").Types.ObjectId;
+}, Schema<any, import("mongoose").Model<any, any, any, any, any, any>, {}, {}, {}, {}, {
+    timestamps: true;
+}, {
+    createdAt: NativeDate;
+    updatedAt: NativeDate;
+} & {
+    createdBy: import("mongoose").Types.ObjectId;
+    title: string;
+    authors: string[];
+    tags: string[];
+    permissions?: {
+        allRead: boolean;
+        allWrite: boolean;
+        usersRead: import("mongoose").Types.ObjectId[];
+        usersWrite: import("mongoose").Types.ObjectId[];
+        groupsRead: import("mongoose").Types.ObjectId[];
+        groupsWrite: import("mongoose").Types.ObjectId[];
+    } | undefined;
+    medium?: "book" | "article" | "video" | "podcast" | "website" | undefined;
+    url?: string | undefined;
+    publishedAt?: Date | undefined;
+    lastAccessed?: Date | undefined;
+}, import("mongoose").Document<unknown, {}, {
+    createdAt: NativeDate;
+    updatedAt: NativeDate;
+} & {
+    createdBy: import("mongoose").Types.ObjectId;
+    title: string;
+    authors: string[];
+    tags: string[];
+    permissions?: {
+        allRead: boolean;
+        allWrite: boolean;
+        usersRead: import("mongoose").Types.ObjectId[];
+        usersWrite: import("mongoose").Types.ObjectId[];
+        groupsRead: import("mongoose").Types.ObjectId[];
+        groupsWrite: import("mongoose").Types.ObjectId[];
+    } | undefined;
+    medium?: "book" | "article" | "video" | "podcast" | "website" | undefined;
+    url?: string | undefined;
+    publishedAt?: Date | undefined;
+    lastAccessed?: Date | undefined;
+}> & {
+    createdAt: NativeDate;
+    updatedAt: NativeDate;
+} & {
+    createdBy: import("mongoose").Types.ObjectId;
+    title: string;
+    authors: string[];
+    tags: string[];
+    permissions?: {
+        allRead: boolean;
+        allWrite: boolean;
+        usersRead: import("mongoose").Types.ObjectId[];
+        usersWrite: import("mongoose").Types.ObjectId[];
+        groupsRead: import("mongoose").Types.ObjectId[];
+        groupsWrite: import("mongoose").Types.ObjectId[];
+    } | undefined;
+    medium?: "book" | "article" | "video" | "podcast" | "website" | undefined;
+    url?: string | undefined;
+    publishedAt?: Date | undefined;
+    lastAccessed?: Date | undefined;
+} & {
+    _id: import("mongoose").Types.ObjectId;
+}>>;
 export default _default;
+import { Schema } from "mongoose";
 //# sourceMappingURL=Source.d.ts.map

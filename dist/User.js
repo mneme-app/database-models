@@ -1,10 +1,5 @@
-"use strict";
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
-Object.defineProperty(exports, "__esModule", { value: true });
-const { model, models, Schema } = require("mongoose");
-const NotificationSchema_js_1 = __importDefault(require("./NotificationSchema.js"));
+import { model, Schema } from "mongoose";
+import NotificationSchema from "./NotificationSchema.js";
 // This is for tracking progress on quiz questions
 // and spaced repetition (Leitner method)
 const TQuiz = new Schema({
@@ -64,7 +59,7 @@ const UserSchema = new Schema({
     lastLogin: {
         type: Date,
     },
-    notifications: [NotificationSchema_js_1.default],
+    notifications: [NotificationSchema],
     isPublic: {
         type: Boolean,
         default: false,
@@ -75,4 +70,4 @@ const UserSchema = new Schema({
 UserSchema.set("toJSON", {
     virtuals: true,
 });
-exports.default = (models === null || models === void 0 ? void 0 : models.user) || model("user", UserSchema);
+export default model("user", UserSchema);

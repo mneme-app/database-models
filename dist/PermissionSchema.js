@@ -1,6 +1,4 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-const { Schema } = require("mongoose");
+import { Schema } from "mongoose";
 const PermissionSchema = new Schema({
     allRead: { type: Boolean, default: false },
     allWrite: { type: Boolean, default: false },
@@ -29,4 +27,4 @@ const PermissionSchema = new Schema({
         },
     ],
 });
-exports.default = PermissionSchema;
+export default PermissionSchema;

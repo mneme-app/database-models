@@ -1,4 +1,3 @@
-"use strict";
 var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
     function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
     return new (P || (P = Promise))(function (resolve, reject) {
@@ -8,52 +7,66 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
-Object.defineProperty(exports, "__esModule", { value: true });
-const { Schema } = require("mongoose");
-const User_js_1 = __importDefault(require("./User.js"));
+import { Schema } from "mongoose";
+import User from "./User.js";
+import Group from "./Group.js";
 // validator needs to use the group listed for that admin
 /**
- * @param {any} value
+ * @param {any} userId
+ * @param {any} groupId
  */
-function verifyAdmin(value) {
+function verifyAdmin(userId, groupId) {
     return __awaiter(this, void 0, void 0, function* () {
-        const user = yield User_js_1.default.findById(value);
+        if (groupId) {
+            const group = Group.findById(groupId);
+            // @ts-ignore
+            return group.admins.includes(userId);
+        }
+        const user = yield User.findById(userId);
         if (!user)
             return false;
+        // @ts-ignore
         return user.roles.includes("admin");
     });
 }
+const fromField = new Schema({
+    group: {
+        type: Schema.Types.ObjectId,
+        ref: "group",
+    },
+    admin: {
+        type: Schema.Types.ObjectId,
+        ref: "user",
+        validate: {
+            validator: (/** @type {String} */ value) => {
+                // @ts-ignore
+                verifyAdmin(value, this.group);
+            },
+            message: "You must be an administrator to send a message to an individual user",
+        },
+    },
+    user: {
+        type: Schema.Types.ObjectId,
+        ref: "user",
+    },
+});
 const NotificationSchema = new Schema({
     from: {
-        group: {
-            type: Schema.Types.ObjectId,
-            ref: "group",
-        },
-        admin: {
-            type: Schema.Types.ObjectId,
-            ref: "user",
-            validate: {
-                validator: verifyAdmin,
-                message: "You must be an administrator to send a message to an individual user",
-            },
-        },
+        type: fromField,
         required: true,
     },
     subject: {
         type: String,
         required: true,
-        enum: {
-            values: [
-                "Response required: Notice of violation",
-                "A group has invited you to join them!",
-            ],
-        },
     },
     message: {
         type: String,
     },
+    responseSent: {
+        type: Boolean,
+        default: false,
+    },
+}, {
+    timestamps: true,
 });
-exports.default = NotificationSchema;
+export default NotificationSchema;

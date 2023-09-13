@@ -21,8 +21,80 @@
 /// <reference types="mongoose/types/utility" />
 /// <reference types="mongoose/types/validation" />
 /// <reference types="mongoose/types/virtuals" />
-/// <reference types="mongoose" />
 /// <reference types="mongoose/types/inferschematype" />
-declare const _default: import("mongoose").Model<any, {}, {}, {}, any, any>;
+declare const _default: import("mongoose").Model<{
+    createdAt: NativeDate;
+    updatedAt: NativeDate;
+} & {
+    name: string;
+    users: import("mongoose").Types.ObjectId[];
+    admins: import("mongoose").Types.ObjectId[];
+    invitations: import("mongoose").Types.ObjectId[];
+    isPublic: boolean;
+    description?: string | undefined;
+    owner?: import("mongoose").Types.ObjectId | undefined;
+}, {}, {}, {}, import("mongoose").Document<unknown, {}, {
+    createdAt: NativeDate;
+    updatedAt: NativeDate;
+} & {
+    name: string;
+    users: import("mongoose").Types.ObjectId[];
+    admins: import("mongoose").Types.ObjectId[];
+    invitations: import("mongoose").Types.ObjectId[];
+    isPublic: boolean;
+    description?: string | undefined;
+    owner?: import("mongoose").Types.ObjectId | undefined;
+}> & {
+    createdAt: NativeDate;
+    updatedAt: NativeDate;
+} & {
+    name: string;
+    users: import("mongoose").Types.ObjectId[];
+    admins: import("mongoose").Types.ObjectId[];
+    invitations: import("mongoose").Types.ObjectId[];
+    isPublic: boolean;
+    description?: string | undefined;
+    owner?: import("mongoose").Types.ObjectId | undefined;
+} & {
+    _id: import("mongoose").Types.ObjectId;
+}, Schema<any, import("mongoose").Model<any, any, any, any, any, any>, {}, {}, {}, {}, {
+    timestamps: true;
+}, {
+    createdAt: NativeDate;
+    updatedAt: NativeDate;
+} & {
+    name: string;
+    users: import("mongoose").Types.ObjectId[];
+    admins: import("mongoose").Types.ObjectId[];
+    invitations: import("mongoose").Types.ObjectId[];
+    isPublic: boolean;
+    description?: string | undefined;
+    owner?: import("mongoose").Types.ObjectId | undefined;
+}, import("mongoose").Document<unknown, {}, {
+    createdAt: NativeDate;
+    updatedAt: NativeDate;
+} & {
+    name: string;
+    users: import("mongoose").Types.ObjectId[];
+    admins: import("mongoose").Types.ObjectId[];
+    invitations: import("mongoose").Types.ObjectId[];
+    isPublic: boolean;
+    description?: string | undefined;
+    owner?: import("mongoose").Types.ObjectId | undefined;
+}> & {
+    createdAt: NativeDate;
+    updatedAt: NativeDate;
+} & {
+    name: string;
+    users: import("mongoose").Types.ObjectId[];
+    admins: import("mongoose").Types.ObjectId[];
+    invitations: import("mongoose").Types.ObjectId[];
+    isPublic: boolean;
+    description?: string | undefined;
+    owner?: import("mongoose").Types.ObjectId | undefined;
+} & {
+    _id: import("mongoose").Types.ObjectId;
+}>>;
 export default _default;
+import { Schema } from "mongoose";
 //# sourceMappingURL=Group.d.ts.map
